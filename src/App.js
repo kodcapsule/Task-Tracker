@@ -31,10 +31,17 @@ function App() {
       reminder: true,
     },
   ]);
+  const deletTask = (id) => {
+    // console.log(`deleted task with Id: ${id}`);
+    setTasks(tasks.filter((task) => task.id !== id));
+  };
+  const toggleReminder = (id) => {
+    console.log("toggle", id);
+  };
   return (
     <div className="container">
       <Header />
-      <Tasks tasks={tasks} />
+      <Tasks tasks={tasks} onDelete={deletTask} onToggle={toggleReminder} />
     </div>
   );
 }

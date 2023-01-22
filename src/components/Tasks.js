@@ -1,6 +1,6 @@
 import Task from "./Task";
 
-const Tasks = ({ tasks }) => {
+const Tasks = ({ tasks, onDelete, onToggle }) => {
   return (
     <main>
       <h1
@@ -9,11 +9,19 @@ const Tasks = ({ tasks }) => {
           textDecoration: "underline",
         }}
       >
-        main tasks
+        Tasks
       </h1>
-      {tasks.map((task) => (
-        <Task task={task} key={task.id} />
-      ))}
+
+      {tasks.length > 0
+        ? tasks.map((task) => (
+            <Task
+              task={task}
+              key={task.id}
+              onDelete={onDelete}
+              onToggle={onToggle}
+            />
+          ))
+        : "No tasks Avialable"}
     </main>
   );
 };
