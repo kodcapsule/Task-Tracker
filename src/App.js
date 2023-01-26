@@ -15,7 +15,7 @@ function App() {
       id: 2,
       title: "Draw time table for the week",
       day: "21-01-2023",
-      reminder: true,
+      reminder: false,
     },
 
     {
@@ -28,7 +28,7 @@ function App() {
       id: 4,
       title: "Call Mum and Dad",
       day: "24-01-2023",
-      reminder: true,
+      reminder: false,
     },
   ]);
   const deletTask = (id) => {
