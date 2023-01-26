@@ -35,9 +35,15 @@ function App() {
     // console.log(`deleted task with Id: ${id}`);
     setTasks(tasks.filter((task) => task.id !== id));
   };
-  const toggleReminder = (id) => {
-    console.log("toggle", id);
+  const toggleReminder = (id, event) => {
+    setTasks(
+      tasks.map((task) => {
+        return task.id === id ? { ...task, reminder: !task.reminder } : task;
+      })
+    );
+    console.log(event.detail, id);
   };
+
   return (
     <div className="container">
       <Header />
