@@ -5,6 +5,7 @@ import Tasks from "./components/Tasks";
 import AddTask from "./components/AddTask";
 
 function App() {
+  const [showAddTask, setShowAddTask] = useState(false);
   const [tasks, setTasks] = useState([
     {
       id: 1,
@@ -32,6 +33,10 @@ function App() {
       reminder: false,
     },
   ]);
+
+  const showTask = () => {
+    setShowAddTask(!showAddTask);
+  };
   const deletTask = (id) => {
     // console.log(`deleted task with Id: ${id}`);
     setTasks(tasks.filter((task) => task.id !== id));
@@ -56,8 +61,8 @@ function App() {
 
   return (
     <div className="container">
-      <Header />
-      <AddTask onAdd={addTask} />
+      <Header onShow={showTask} taskShow={showAddTask} />
+      {showAddTask && <AddTask onAdd={addTask} />}
       <Tasks tasks={tasks} onDelete={deletTask} onToggle={toggleReminder} />
     </div>
   );
