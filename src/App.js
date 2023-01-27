@@ -38,7 +38,11 @@ function App() {
   };
 
   const addTask = (task) => {
-    console.log(task);
+    const id = Math.floor(Math.random() * 1000 + 1);
+
+    const newtask = { id, ...task };
+    setTasks([...tasks, newtask]);
+    console.log(id);
   };
 
   const toggleReminder = (id, event) => {
