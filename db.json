@@ -1,19 +1,31 @@
 {
-  "posts": [
+  "tasks": [
     {
       "id": 1,
-      "title": "json-server",
-      "author": "typicode"
-    }
-  ],
-  "comments": [
+      "title": "Call Litraco",
+      "day": "23-01-2023",
+      "reminder": true
+    },
+
     {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "id": 2,
+      "title": "Draw time table for the week",
+      "day": "21-01-2023",
+      "reminder": false
+    },
+
+    {
+      "id": 3,
+      "title": "Call Richmond",
+      "day": "24-01-2023",
+      "reminder": true
+    },
+    {
+      "id": 4,
+      "title": "Call Mum and Dad",
+      "day": "24-01-2023",
+      "reminder": false
     }
   ],
-  "profile": {
-    "name": "typicode"
-  }
+  "comments": [{ "id": 1, "body": "some comment", "postId": 1 }]
 }
